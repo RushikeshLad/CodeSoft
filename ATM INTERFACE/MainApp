@@ -1,0 +1,9 @@
+package AtmInterface;
+
+public class MainApp {
+    public static void main(String[] args) {
+        BankAccount bankAccount=new BankAccount(5000);
+        Atm Atm=new Atm(bankAccount);
+    Atm.Operations();
+    }
+}
