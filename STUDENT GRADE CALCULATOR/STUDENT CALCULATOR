@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class Task2 {
+    public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+        System.out.println("ENTER YOUR NUMBER OF SUBJECT");
+        int numOfSubject=scanner.nextInt();
+
+        int totalMarks=0;
+        for (int i=1;i<=numOfSubject;i++){
+            System.out.println("ENTER MARKS OBTAINED IN SUBJECT :"+i);
+            int marks=scanner.nextInt();
+
+            totalMarks += marks;
+        }
+
+        double averagePer= totalMarks / numOfSubject;
+
+        System.out.println("TOTAL MARKS :"+totalMarks);
+        System.out.println("AVERAGE PERCENTAGE :"+averagePer);
+
+        if (averagePer >=90){
+            System.out.println("STUDENT GRADE IS = A");
+        } else if (averagePer >=80)
+        {
+            System.out.println("STUDENT GRADE IS = B");
+        } else if (averagePer >=70)
+        {
+            System.out.println("STUDENT GRADE IS = C");
+        } else if (averagePer >=60)
+        {
+            System.out.println("STUDENT GRADE IS = D");
+        }else if (averagePer >=40)
+        {
+            System.out.println("STUDENT GRADE IS = E");
+        }else if (averagePer <35)
+        {
+            System.out.println("STUDENT GRADE IS = F & STUDENT IS FAIL");
+        }
+        else {
+            System.out.println("SOMETHING WENT WRONG");
+        }
+    }
+}
+
