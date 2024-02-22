@@ -1,0 +1,60 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class CodeSoftTask1 {
+    public static void main(String[] args) {
+        int score=0;
+
+        Random random=new Random();
+        Scanner scanner=new Scanner(System.in);
+
+        boolean PlayGameAgain=true;
+
+        while (PlayGameAgain){
+            System.out.println("ENTER YOUR MAXIMUM NUMBER");
+            int maxNumber=scanner.nextInt();
+
+            System.out.println("ENTER YOUR MIN NUMBER");
+            int minNumber=scanner.nextInt();
+
+            System.out.println("ENTER YOUR ATTEMPTS");
+            int attemptLimit=scanner.nextInt();
+
+           int generateNumber = random.nextInt(maxNumber-minNumber+1)+minNumber;
+
+           int attempts=0;
+
+           boolean guessCorrect= false;
+
+            System.out.println("GUESS NUMBER BETWEEN "+minNumber+ " AND "+maxNumber);
+
+            while (!guessCorrect && attempts < attemptLimit){
+                System.out.println("ENTER YOUR GUESS NUMBER");
+                int guess=scanner.nextInt();
+
+                attempts++;
+
+                if(guess==generateNumber){
+                    System.out.println("YOUR NUMBER TO LOW PLEASE TRY AGAIN ");
+                }else {
+                    System.out.println("YOUR NUMBER TO HIGH PLEASE TRY AGAIN ");
+                }
+            }
+
+            if (!guessCorrect){
+                System.out.println("YOUR ATTEMPTS IS OVER THE CORRECT NUMBER IS "+generateNumber);
+            }
+            System.out.println("YOUR SCORE:"+score);
+
+            System.out.println("DO YOU PLAY AGAIN");
+            System.out.println("1: YES");
+            System.out.println("2: NO");
+
+            String playAgainInput=scanner.next();
+          PlayGameAgain = playAgainInput.equalsIgnoreCase("YES");
+        }
+    }
+}
+
+
+
