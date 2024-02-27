@@ -1,0 +1,38 @@
+package StudentManagmentSystem;
+
+import java.util.ArrayList;
+
+public class ManagementSystem {
+    private ArrayList<Student> students;
+    public ManagementSystem(){
+        students= new ArrayList<>();
+    }
+
+    public void addStudent(Student student) {
+        students.add(student);
+    }
+
+
+  public Student searchStudent(int rollNum){
+        for (Student student:students){
+            if (student.getStudentRollNum()== rollNum){
+
+            }
+            return student;
+        }
+        return null;
+  }
+
+  public Student removeStudent(int rollNum){
+        students.removeIf(students -> students.getStudentRollNum()==rollNum);
+      return null;
+  }
+  public void displayAllStudent(){
+        for (Student student:students){
+            System.out.println(student);
+        }
+
+  }
+
+
+}
